@@ -9,7 +9,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -332,12 +331,10 @@ public class NavigationDrawer_Dashboard extends AppCompatActivity implements che
     private void handleDiscountedPrice(double discountedPrice) {
         double finalDiscount=discountedPrice*100;
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,new Intent(this,Signin.class),PendingIntent.FLAG_MUTABLE);
         // This is the first run, show your notification
-        AppInitializationManager.showNotification(this);
+        //AppInitializationManager.showNotification(this);
 
-        CustomDialog.showCustomDialog(this, " \uD83C\uDF89 Congratulations!! \uD83C\uDF89", "You've received a ₹"+ finalDiscount+" worth of promotional wallet balance. Login and goto Wallet to redeem.",pendingIntent);
-        AppInitializationManager.markFirstRunDone(this);
+        //AppInitializationManager.markFirstRunDone(this);
 
         sessionManager = new SessionManager(this);
         sessionManager.setKeyPromotionalNotifSent(true);

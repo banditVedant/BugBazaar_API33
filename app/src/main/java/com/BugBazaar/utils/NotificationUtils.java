@@ -3,7 +3,6 @@ package com.BugBazaar.utils;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -20,20 +19,18 @@ public class NotificationUtils {
     public static void showCustomNotification(Context context) {
         Intent intent = new Intent();
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_MUTABLE);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(com.razorpay.R.drawable.common_google_signin_btn_icon_dark)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setAutoCancel(true)
-                .setContentTitle("Your Title")
-                .setContentText("Your Notification Content")
-                .setContentIntent(pendingIntent);
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
+//                .setSmallIcon(com.razorpay.R.drawable.common_google_signin_btn_icon_dark)
+//                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+//                .setAutoCancel(true)
+//                .setContentTitle("Your Title")
+//                .setContentText("Your Notification Content")
 
-        createNotificationChannel(context);
+        //createNotificationChannel(context);
 
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-        notificationManager.notify(NOTIFICATION_ID, builder.build());
+       // NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+        //notificationManager.notify(NOTIFICATION_ID, builder.build());
     }
 
     private static void createNotificationChannel(Context context) {

@@ -1,7 +1,6 @@
 package com.BugBazaar.utils;
 
 import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,7 +8,7 @@ import android.content.Intent;
 import com.BugBazaar.ui.Signin;
 
 public class CustomDialog {
-    public static void showCustomDialog(Context context, String title, String message, PendingIntent pendingIntent) {
+    public static void showCustomDialog(Context context, String title, String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(title)
                 .setMessage(message)
